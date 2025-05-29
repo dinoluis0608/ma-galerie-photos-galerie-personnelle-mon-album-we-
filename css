@@ -1,0 +1,77 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.gallery-container {
+    padding: 20px;
+    column-count: 1; /* Par défaut, une colonne pour les petits écrans */
+    column-gap: 20px;
+}
+
+.gallery-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    break-inside: avoid; /* Empêche les éléments de se couper entre les colonnes */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Pour gérer le débordement des images/vidéos */
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: auto;
+    display: block; /* Supprime l'espace sous l'image */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Styles pour les vidéos */
+.gallery-item video {
+    max-width: 100%; /* Assure que la vidéo ne dépasse pas son conteneur */
+    height: auto;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries pour la disposition en colonnes */
+@media (min-width: 600px) {
+    .gallery-container {
+        column-count: 2; /* 2 colonnes pour les écrans moyens */
+    }
+}
+
+@media (min-width: 900px) {
+    .gallery-container {
+        column-count: 3; /* 3 colonnes pour les grands écrans */
+    }
+}
+
+@media (min-width: 1200px) {
+    .gallery-container {
+        column-count: 4; /* 4 colonnes pour les très grands écrans */
+    }
+}
